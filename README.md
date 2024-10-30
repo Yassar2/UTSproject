@@ -8,6 +8,7 @@ Lalu login dengan username dan password yang sudah di register
 Pilih menu yang ada di daftar menu
 ![Gambar WhatsApp 2024-10-30 pukul 12 00 08_4795c46f](https://github.com/user-attachments/assets/51dcd87e-b09e-464c-a04a-0612e9321727)
 
+
 Tambahkan jumlah porsi, Nama pemesan dan catatan bila ada
 ![Gambar WhatsApp 2024-10-30 pukul 12 00 08_2814ac14](https://github.com/user-attachments/assets/20d7b09c-7014-4545-840c-7f05fc15dc9a)
 
