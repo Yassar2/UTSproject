@@ -1,94 +1,184 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp"
-    tools:context=".OrderActivity">
+    android:background="#E0F2F1"> <!-- Light green background -->
 
-        <!-- Judul Halaman -->
-        <TextView
-            android:id="@+id/tvTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Order Food"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="16dp"/>
+    <LinearLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        tools:context=".OrderActivity">
 
-        <!-- Input Nama Makanan -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Food Name"
-            android:textSize="18sp"
-            android:layout_marginBottom="8dp"/>
-        <TextView
-            android:id="@+id/etFoodName"
+        <!-- Unified CardView -->
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Enter food name - Get From List"
-            android:padding="12dp"
-            android:layout_marginBottom="16dp"/>
+            app:cardCornerRadius="24dp"
+            app:cardElevation="8dp"
+            android:layout_marginBottom="20dp"
+            app:cardBackgroundColor="#FFFFFF">
 
-        <!-- Input Jumlah Porsi -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Number of Servings"
-            android:textSize="18sp"
-            android:layout_marginBottom="8dp"/>
-        <EditText
-            android:id="@+id/etServings"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Enter number of servings"
-            android:inputType="number"
-            android:padding="12dp"
-            android:layout_marginBottom="16dp"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-        <!-- Input Jumlah Porsi -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Ordering Name"
-            android:textSize="18sp"
-            android:layout_marginBottom="8dp"/>
-        <EditText
-            android:id="@+id/etName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Ordering name by"
-            android:padding="12dp"
-            android:layout_marginBottom="16dp"/>
+                <!-- Header Section -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="24dp"
+                    android:gravity="center">
 
+                    <ImageView
+                        android:layout_width="72dp"
+                        android:layout_height="72dp"
+                        android:layout_marginBottom="12dp"
+                        android:contentDescription="App Logo"
+                        android:src="@drawable/baseline_order"
+                        app:tint="#00BFA5"
+                        tools:ignore="ContentDescription,HardcodedText,ImageContrastCheck" />
 
-        <!-- Input Catatan Tambahan -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Additional Notes"
-            android:textSize="18sp"
-            android:layout_marginBottom="8dp"/>
-        <EditText
-            android:id="@+id/etNotes"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Enter any additional notes"
-            android:padding="12dp"
-            android:layout_marginBottom="16dp"/>
+                    <TextView
+                        android:id="@+id/tvTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:text="Order Makanan"
+                        android:textColor="#00BFA5"
+                        android:textSize="26sp"
+                        android:textStyle="bold"
+                        tools:ignore="HardcodedText,TextContrastCheck" />
+                </LinearLayout>
 
-        <!-- Tombol Order -->
-        <Button
-            android:id="@+id/btnOrder"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Place Order"
-            android:textColor="@android:color/white"
-            android:padding="12dp"/>
+                <!-- Divider -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#E0E0E0" />
 
-</LinearLayout>
+                <!-- Form Section -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="24dp">
+
+                    <!-- Food Name Label and Selected Food Field -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Food Name"
+                        android:textColor="#00BFA5"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="8dp"
+                        tools:ignore="HardcodedText" />
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etFoodName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:enabled="false"
+                        android:gravity="center_vertical"
+                        android:minHeight="48dp"
+                        android:text="Selected food from list"
+                        android:textColor="#757575"
+                        android:textSize="16sp"
+                        tools:ignore="HardcodedText" />
+
+                    <!-- Number of Servings Input -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:hint="Jumlah Porsi"
+                        app:startIconDrawable="@drawable/baseline_porsi"
+                        app:startIconTint="#00BFA5"
+                        app:boxStrokeColor="#00BFA5"
+                        app:hintTextColor="#00BFA5"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etServings"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:inputType="number"
+                            android:padding="16dp"
+                            tools:ignore="VisualLintTextFieldSize,TextContrastCheck" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Ordering Name Input -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        android:hint="Nama Pemesan"
+                        app:startIconDrawable="@drawable/baseline_person_pin_24"
+                        app:startIconTint="#00BFA5"
+                        app:boxStrokeColor="#00BFA5"
+                        app:hintTextColor="#00BFA5"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:inputType="textPersonName"
+                            android:padding="16dp"
+                            tools:ignore="VisualLintTextFieldSize,TextContrastCheck" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Additional Notes Input -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="24dp"
+                        android:hint="Catatan Tambahan"
+                        app:startIconDrawable="@drawable/baseline_note"
+                        app:startIconTint="#00BFA5"
+                        app:boxStrokeColor="#00BFA5"
+                        app:hintTextColor="#00BFA5"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etNotes"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textMultiLine"
+                            android:minLines="3"
+                            android:padding="16dp"
+                            tools:ignore="VisualLintTextFieldSize,TextContrastCheck" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Order Button styled in Green Theme -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnOrder"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="#00BFA5"
+                        android:padding="16dp"
+                        android:text="Pesan Sekarang"
+                        android:textAllCaps="false"
+                        android:textColor="#FFFFFF"
+                        android:textSize="16sp"
+                        app:cornerRadius="8dp"
+                        app:icon="@drawable/baseline_shopping_cart_24"
+                        app:iconGravity="textStart"
+                        app:iconPadding="16dp"
+                        app:iconSize="24dp"
+                        tools:ignore="HardcodedText,VisualLintButtonSize,TextContrastCheck" />
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+</ScrollView>

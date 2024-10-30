@@ -6,65 +6,180 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp"
-    tools:context=".ConfirmationActivity">
+    android:padding="24dp"
+    android:background="#E8F5E9"
+    tools:context=".ConfirmationActivity"
+    android:gravity="center">
 
-    <!-- Judul Halaman -->
-    <TextView
-        android:id="@+id/tvTitle"
-        android:layout_width="wrap_content"
+    <!-- Title and Icon Card -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Order Food"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="16dp"/>
+        app:cardCornerRadius="24dp"
+        app:cardElevation="12dp"
+        android:layout_marginBottom="16dp"
+        app:cardBackgroundColor="#FFFFFF">
 
-    <!-- Confirmation Nama Makanan -->
-    <TextView
-        android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp"
+            android:gravity="center_horizontal">
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Konfirmasi Order"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="#00C853"
+                android:layout_marginBottom="16dp"
+                tools:ignore="HardcodedText" />
+
+            <ImageView
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:src="@drawable/baseline_konfirmasi"
+                android:layout_marginBottom="16dp"
+                app:tint="#00C853"
+                tools:ignore="ContentDescription" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Order Details Card -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Food Name: Batagor"
-        android:textSize="18sp"
-        android:layout_marginBottom="8dp"/>
+        app:cardCornerRadius="16dp"
+        app:cardElevation="8dp"
+        android:layout_marginBottom="16dp"
+        app:cardBackgroundColor="#FFFFFF">
 
-    <!-- Confirmation Jumlah Porsi -->
-    <TextView
-        android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <!-- Food Name -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nama Makanan"
+                android:textSize="14sp"
+                android:textColor="#757575"
+                android:layout_marginBottom="4dp"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/tvFoodName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textColor="#00C853"
+                android:textStyle="bold"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Number of Servings -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Jumlah Porsi"
+                android:textSize="14sp"
+                android:textColor="#757575"
+                android:layout_marginBottom="4dp"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/tvServings"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textColor="#00C853"
+                android:textStyle="bold"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Ordering Name -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nama Pemesan"
+                android:textSize="14sp"
+                android:textColor="#757575"
+                android:layout_marginBottom="4dp"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/tvOrderingName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textColor="#00C853"
+                android:textStyle="bold"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Additional Notes -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Catatan Tambahan"
+                android:textSize="14sp"
+                android:textColor="#757575"
+                android:layout_marginBottom="4dp"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/tvAdditionalNotes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textColor="#00C853"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Thank You Card -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Number of Servings: 2 pax"
-        android:textSize="18sp"
-        android:layout_marginBottom="8dp"/>
+        app:cardCornerRadius="16dp"
+        app:cardElevation="8dp"
+        android:layout_marginBottom="16dp"
+        app:cardBackgroundColor="#E8F5E9">
 
-    <!-- Confirmation Nama pengorder -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Ordering Name: Usep"
-        android:textSize="18sp"
-        android:layout_marginBottom="8dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp"
+            android:gravity="center">
 
-    <!-- Input Catatan Tambahan -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Additional Notes: Tidak Pedas"
-        android:textSize="18sp"
-        android:layout_marginBottom="16dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Terima kasih atas pesanan Anda! Makanan akan segera dikirim oleh kurir terdekat."
+                android:textColor="#4CAF50"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                tools:ignore="HardcodedText,TextContrastCheck" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
 
-    <!-- Input Catatan Tambahan -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Thanks for your order and please wait for delivering by nearest courier"
-        android:textStyle="bold"
-        android:textSize="18sp"
-        android:layout_marginBottom="8dp"/>
-
-    <Button
+    <!-- Back to Menu Button -->
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/backtoMenu"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Back to Menu" />
-
+        android:layout_marginTop="16dp"
+        android:backgroundTint="#00C853"
+        android:padding="12dp"
+        android:text="Kembali ke Menu"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        app:cornerRadius="12dp"
+        tools:ignore="HardcodedText,TextContrastCheck,VisualLintButtonSize" />
 </LinearLayout>

@@ -25,7 +25,7 @@
             android:text="Food Name"
             android:textSize="18sp"
             android:textStyle="bold"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:layout_marginBottom="4dp"/>
 
         <!-- Deskripsi Makanan -->

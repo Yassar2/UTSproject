@@ -1,66 +1,135 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:layout_marginTop="25dp"
-    android:layout_marginLeft="25dp"
-    android:layout_marginRight="25dp"
-    android:layout_marginBottom="25dp"
-    tools:context=".MainActivity">
+    android:background="#E8F5E9"> <!-- Light green background -->
 
-    <!-- Logo Aplikasi -->
-    <ImageView
-        android:id="@+id/logo"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:src="@drawable/ic_launcher_foreground"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="32dp"/>
-
-    <!-- Username Field -->
-    <EditText
-        android:id="@+id/etUsername"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/hint_username"
-        android:drawableLeft="@drawable/ic_person"
-        android:padding="12dp"
-        android:layout_marginBottom="16dp"
-        android:inputType="text"/>
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="24dp"
+        tools:context=".MainActivity">
 
-    <!-- Password Field -->
-    <EditText
-        android:id="@+id/etPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/hint_password"
-        android:drawableLeft="@drawable/ic_lock"
-        android:padding="12dp"
-        android:layout_marginBottom="16dp"
-        android:inputType="textPassword"/>
+        <!-- CardView with enhanced size and style -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            app:cardCornerRadius="24dp"
+            app:cardElevation="12dp"
+            app:cardBackgroundColor="#FFFFFF">
 
-    <!-- Button Login -->
-    <Button
-        android:id="@+id/btnLogin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/login"
-        android:layout_gravity="center_horizontal"
-        android:textColor="@android:color/white"
-        android:layout_marginBottom="16dp"/>
+            <LinearLayout
+                android:id="@+id/main"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="32dp"
+                android:gravity="center"
+                tools:ignore="ExtraText">
 
-    <!-- Register Link -->
-    <TextView
-        android:id="@+id/tvRegister"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/register"
-        android:layout_gravity="center"
-        android:clickable="true"
-        android:focusable="true"/>
+                <!-- Logo Image -->
+                <ImageView
+                    android:id="@+id/logo"
+                    android:layout_width="120dp"
+                    android:layout_height="140dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="24dp"
+                    android:contentDescription="App Logo"
+                    android:src="@drawable/logoapp"
+                    app:tint="#00BFA5"
+                    tools:ignore="ContentDescription,HardcodedText" />
 
-</LinearLayout>
+                <!-- Welcome Text with Green Theme -->
+                <TextView
+                    android:id="@+id/text1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Selamat Datang Di APP FOODNOW"
+                    android:textSize="26sp"
+                    android:textStyle="bold"
+                    android:textColor="#00BFA5"
+                    android:gravity="center"
+                    android:layout_marginBottom="24dp"
+                    tools:ignore="HardcodedText" />
+
+                <!-- Username Field -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="8dp"
+                    android:hint="Enter username"
+                    app:boxStrokeColor="#1E88E5"
+                    app:hintTextColor="#1E88E5"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    tools:ignore="HardcodedText">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etUsername"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableStart="@drawable/ic_person2"
+                        android:inputType="text"
+                        android:paddingStart="16dp"
+                        android:textColorHint="#757575"
+                        tools:ignore="RtlSymmetry,TextContrastCheck,VisualLintTextFieldSize" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="24dp"
+                    android:hint="Enter password"
+                    app:boxStrokeColor="#1E88E5"
+                    app:hintTextColor="#1E88E5"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    tools:ignore="HardcodedText">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableEnd="@drawable/ic_baseline_visibility_24"
+                        android:inputType="textPassword"
+                        android:paddingStart="16dp"
+                        tools:ignore="RtlSymmetry,TextContrastCheck,VisualLintTextFieldSize" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnLogin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:backgroundTint="#00BFA5"
+                    android:text="Login"
+                    android:textAllCaps="false"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp"
+                    app:cornerRadius="10dp" />
+
+                <!-- Register Link -->
+                <TextView
+                    android:id="@+id/tvRegister"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:minHeight="48dp"
+                    android:paddingTop="16dp"
+                    android:text="Belum punya akun? Daftar sekarang"
+                    android:textColor="#00BFA5"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+</ScrollView>

@@ -1,5 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="card_background">#FFFFFF</color> <!-- White background for card -->
+    <color name="button_background">#4CAF50</color> <!-- Green for button -->
+    <!-- Primary colors -->
+    <color name="primary_color">#6200EE</color>
+    <color name="primary_dark_color">#3700B3</color>
+    <color name="accent_color">#03DAC5</color>
+
+    <!-- Custom colors -->
+    <color name="green_color">#4CAF50</color>
+    <color name="light_gray">#FAFAFA</color>
+    <color name="dark_text">#333333</color>
+    <color name="hint_text">#AAAAAA</color>
+    <color name="white">#FFFFFF</color>
+    <!-- Accent Colors -->
+    <color name="accent">#FFC107</color> <!-- Amber for accents or highlights -->
+    <color name="error">#D32F2F</color> <!-- Red for error messages -->
+
+    <!-- Additional Custom Colors -->
+    <color name="transparent_black">#33000000</color> <!-- Transparent black for overlays if needed -->
+    <color name="border_gray">#DDDDDD</color> <!-- Light gray for borders or dividers -->
     <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <color name="primaryTextColor">#333333</color>
+    <color name="secondaryTextColor">#777777</color>
 </resources>

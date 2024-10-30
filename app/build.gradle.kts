@@ -36,12 +36,17 @@ android {
 }
 
 dependencies {
-
-    implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.appcompat)
-    implementation(libs.material)
-    implementation(libs.androidx.activity)
-    implementation(libs.androidx.constraintlayout)
+    implementation ("androidx.core:core-ktx:1.7.0")
+    implementation ("androidx.appcompat:appcompat:1.4.1")
+    implementation ("androidx.constraintlayout:constraintlayout:2.1.3")
+    implementation ("androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0") // Pastikan hanya satu versi
+    annotationProcessor ("com.github.bumptech.glide:compiler:4.12.0")
+    implementation ("androidx.recyclerview:recyclerview:1.3.2")
+    implementation ("androidx.lifecycle:lifecycle-livedata-ktx:2.7.0")
+    implementation ("com.github.bumptech.glide:glide:4.16.0")
+    implementation ("com.google.android.material:material:1.9.0")
+    implementation ("androidx.activity:activity-ktx:1.8.0")
+    implementation ("androidx.cardview:cardview:1.0.0")
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
